@@ -1,5 +1,5 @@
 # Start from an image with the docker client installed
-FROM docker:26.0.0-cli-alpine3.19
+FROM docker:27.3.1-cli-alpine3.20
 
 # Install python
 RUN apk add --no-cache python3 bash uuidgen git
