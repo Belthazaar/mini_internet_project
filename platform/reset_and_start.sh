@@ -22,13 +22,13 @@ bash ./startup.sh
 echo "Waiting for all containers to start.."
 sleep 30
 
-bash ./utils/autoconfiguration/configure_as.sh
+# bash ./utils/autoconfiguration/configure_as.sh
 
-echo "waiting 60 seconds for configuration to be applied.."
-sleep 60
+# echo "waiting 60 seconds for configuration to be applied.."
+# sleep 60
 # This seems to fix the occasional issue where the bgp messages aren't propogating properly
-echo "Clearing BGP tables to confirm configuration.."
-bash ./setup/bgp_clear.sh .
+# echo "Clearing BGP tables to confirm configuration.."
+# bash ./setup/bgp_clear.sh .
 
 echo "Done!"
 printf -v endTime "$(date +'%Y-%m-%d %H:%M:%S')"
