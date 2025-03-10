@@ -1,4 +1,4 @@
-ZURI    MATRIX_TARGET routinator:belthazaar/d_routinator        vtysh ALL
-ZURI    DNS           krill:belthazaar/d_krill                  vtysh ALL
-ZURI    MATRIX        N/A                                       vtysh ALL
-ZURI    MEASUREMENT   N/A                                       vtysh ALL
+SING    MATRIX_TARGET routinator:belthazaar/d_routinator        vtysh ALL
+SING    DNS           krill:belthazaar/d_krill                  vtysh ALL
+SING    MATRIX        N/A                                       vtysh ALL
+SING    MEASUREMENT   N/A                                       vtysh ALL

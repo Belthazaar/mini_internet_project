@@ -99,46 +99,46 @@ transit_as_topo = {
     # connection of AS to X: (AS city, AS role)
     # Example: The connection to the first provider is at Basel, and the AS
     # takes the role of a customer.
-    'provider1': ('MUNI', customer),
-    'provider2': ('BASE', customer),
-    'customer1': ('LYON', provider),
-    'customer2': ('MILA', provider),
+    'provider1': ('TOKY', customer),
+    'provider2': ('BANK', customer),
+    'customer1': ('MUMB', provider),
+    'customer2': ('AUCK', provider),
     # Peer and IXP.
-    'peer': ('LUGA', peer),
-    'ixp': ('VIEN', peer),
+    'peer': ('SYDN', peer),
+    'ixp': ('GUAM', peer),
 }
 
 # All non-transit ASes only have a single router ZURI.
 
 tier1_topo = {
     # Tier 1 Ases have no providers, but more peers and two IXPs.
-    'ixp_central': ('ZURI', peer),
-    'ixp': ('ZURI', peer),
+    'ixp_central': ('SING', peer),
+    'ixp': ('SING', peer),
     # Other Tier 1.
-    'peer1': ('ZURI', peer),
-    'peer2': ('ZURI', peer),
+    'peer1': ('SING', peer),
+    'peer2': ('SING', peer),
     # Connections to customers.
-    'customer1': ('ZURI', provider),
-    'customer2': ('ZURI', provider),
+    'customer1': ('SING', provider),
+    'customer2': ('SING', provider),
 }
 
 # We use a minimal stub topo without hijacks, and the transit one with hijacks.
 stub_topo = transit_as_topo if ENABLE_STUB_HIJACKS else {
     # Same providers, but IXP and peer. are somewhere else.
-    "provider1": ("ZURI", customer),
-    "provider2": ("ZURI", customer),
-    "peer": ("ZURI", peer),
-    "ixp": ("ZURI", peer),
+    "provider1": ("SING", customer),
+    "provider2": ("SING", customer),
+    "peer": ("SING", peer),
+    "ixp": ("SING", peer),
 }
 
 buffer_topo = {
     # Looks like transit AS, but we only have a single router.
-    "provider1": ("ZURI", customer),
-    "provider2": ("ZURI", customer),
-    "customer1": ("ZURI", provider),
-    "customer2": ("ZURI", provider),
-    "peer": ("ZURI", peer),
-    "ixp": ("ZURI", peer),
+    "provider1": ("SING", customer),
+    "provider2": ("SING", customer),
+    "customer1": ("SING", provider),
+    "customer2": ("SING", provider),
+    "peer": ("SING", peer),
+    "ixp": ("SING", peer),
 }
 
 ixp_topo = {
@@ -178,7 +178,8 @@ ASES_PER_AREA = CONFIGURABLE_PER_AREA + 4  # 2 stub, 2 provider
 if ENABLE_STUB_HIJACKS:
     ASES_PER_AREA += 2  # add 2 ASes as buffer between students and hijackers.
 # Leave enough space if we have to skip some ASes.
-_area_max = 10 * math.ceil((ASES_PER_AREA + 1 + len(skip_groups)) / 10)
+# _area_max = 10 * math.ceil((ASES_PER_AREA + 1 + len(skip_groups)) / 10)
+_area_max = 10
 
 
 def _area_ases(start):

@@ -1,15 +1,15 @@
 +------------------------------------------------------+
 |                                                      |
-|   Communication Networks 2024  - Routing Project     |
+|     University of Auckland Routing Project 2025      |
 |             Build your mini-Internet!                |
 |                                                      |
 |   From here, you can access your virtual devices     |
 |   with the goto.sh script. For instance:             |
 |                                                      |
-|       ./goto.sh zuri router                          |
-|       ./goto.sh zuri host                            |
+|       ./goto.sh sing router                          |
+|       ./goto.sh sing host                            |
 |       ./goto.sh dcn  s1                              |
-|       ./goto.sh dcn  fifa_1                          |
+|       ./goto.sh dcn  win_1                           |
 |                                                      |
 |   Or you can access the public measurement service:  |
 |                                                      |

@@ -3,7 +3,7 @@ FROM d_base:latest AS build
 
 # Specify what version of routinator should be built.
 ARG ROUTINATOR_VERSION=0.14.0
-ARG BUILD_THREADS=48
+ARG BUILD_THREADS=4
 
 RUN apk add wget openssl-dev rust cargo
 
